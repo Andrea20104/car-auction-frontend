@@ -1,0 +1,38 @@
+<div>
+  <form (submit)="calculateTotal()" [formGroup]="form">
+    <label>Tipo</label>
+    <select id="vehicleType" formControlName="vehicleType">
+      <option value="Common">Common</option>
+      <option value="Luxury">Luxury</option>
+    </select>
+    <br>
+    <label>Precio</label>
+    <input formControlName="basePrice" type="number" />
+    <br>
+    <button type="submit">Calcular</button>
+
+    <br>
+    <nz-table #basicTable [nzData]="responseModel">
+      <thead>
+        <tr>
+          <th>Base</th>
+          <th>Special</th>
+          <th>Association</th>
+          <th>Storage</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ responseModel.BasicUserFee }}</td>
+          <td>{{ responseModel.SellersSpecialFee }}</td>
+          <td>{{ responseModel.AssociationFee }}</td>
+          <td>{{ responseModel.StorageFee }}</td>
+          <td>{{ responseModel.TotalCost }}</td>
+        </tr>
+      </tbody>
+    </nz-table>
+    <br>
+  </form>
+
+</div>

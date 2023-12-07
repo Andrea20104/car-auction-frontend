@@ -1,14 +1,15 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { Component} from '@angular/core';
+import { ApiService } from './api.service';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  providers: [ApiService],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
-  title = 'car-auction-frontend';
+
 }
+
